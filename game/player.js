@@ -22,6 +22,8 @@ var Player = function(name, color, position, direction) {
 
     this.graphic = new THREE.Mesh(sphere, this.material);
     this.graphic.position.z = 6;
+    this.graphic.position.x = position.x;
+    this.graphic.position.y = position.y;
     this.graphic.rotateOnAxis(new THREE.Vector3(0,0,1), this.direction);
 };
 

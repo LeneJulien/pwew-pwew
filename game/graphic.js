@@ -25,8 +25,20 @@ function init()
     noGround = [];
     ground = new Ground(0xffffff, WIDTH, HEIGHT, 10);
     
-    player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 0), 0);
+    player1 = new Player("player1", 0xffff00, new THREE.Vector2(0, 0), 0);
     scene.add(player1.graphic);
+
+    enemies = [];
+    nbenemies = Math.floor(Math.random() * 11) + 1
+    for(let i = 2; i < nbenemies; ++i){
+        x = Math.floor(Math.random() * 200) + 1
+        y = Math.floor(Math.random() * 200) + 1
+        minusX = Math.round(Math.random())
+        minusY = Math.round(Math.random())
+        player = new Player("player" + i, 0xffff00, new THREE.Vector2(minusX == 1 ? x : -x, minusY == 1 ? y : -y), 0);
+        enemies.push(player);
+        scene.add(player.graphic);
+    }
 
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
