@@ -62,8 +62,8 @@ function bullet_collision_player()
     for (var i = 0; i < player1.bullets.length; i++)
     {
         for (var j = 0; j < enemies.length; j++){
-            if (Math.abs(player1.bullets[i].position.x - enemies[j].position.x)  < 7 &&
-                Math.abs(player1.bullets[i].position.y - enemies[j].position.y) < 7)
+            if (Math.abs(player1.bullets[i].position.x - enemies[j].graphic.position.x)  < 7 &&
+                Math.abs(player1.bullets[i].position.y - enemies[j].graphic.position.y) < 7)
             {
                 console.log("enemie toucher");
                 scene.remove(player1.bullets[i]);
